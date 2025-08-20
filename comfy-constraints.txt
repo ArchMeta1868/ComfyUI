@@ -1,0 +1,8 @@
+diffusers==0.28.1        # last release that still exports diffusers.models.unet_2d_blocks
+transformers>=4.39
+onnx==1.17.0
+onnxruntime-gpu==1.18.0
+onnxruntime-directml==1.18.0   # keep DirectML provider in sync
+pillow>=10
+tqdm>=4.66
+huggingface-hub==0.25.1

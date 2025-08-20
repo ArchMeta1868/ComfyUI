@@ -36,12 +36,14 @@ def apply_custom_paths():
         folder_paths.set_output_directory(output_dir)
 
     # These are the default folders that checkpoints, clip and vae models will be saved to when using CheckpointSave, etc.. nodes
-    folder_paths.add_model_folder_path("checkpoints", os.path.join(folder_paths.get_output_directory(), "checkpoints"))
-    folder_paths.add_model_folder_path("clip", os.path.join(folder_paths.get_output_directory(), "clip"))
-    folder_paths.add_model_folder_path("vae", os.path.join(folder_paths.get_output_directory(), "vae"))
-    folder_paths.add_model_folder_path("diffusion_models", os.path.join(folder_paths.get_output_directory(), "diffusion_models"))
-    folder_paths.add_model_folder_path("loras", os.path.join(folder_paths.get_output_directory(), "loras"))
-    folder_paths.add_model_folder_path("ultralytics", os.path.join(folder_paths.get_output_directory(), "ultralytics"))
+    # All models redirected to custom models directory
+    custom_models_path = r"F:\Machine Learning\CV\models"
+    folder_paths.add_model_folder_path("checkpoints", os.path.join(custom_models_path, "checkpoints"))
+    folder_paths.add_model_folder_path("clip", os.path.join(custom_models_path, "clip"))
+    folder_paths.add_model_folder_path("vae", os.path.join(custom_models_path, "vae"))
+    folder_paths.add_model_folder_path("diffusion_models", os.path.join(custom_models_path, "diffusion_models"))
+    folder_paths.add_model_folder_path("loras", os.path.join(custom_models_path, "loras"))
+    folder_paths.add_model_folder_path("ultralytics", os.path.join(custom_models_path, "ultralytics"))
 
     if args.input_directory:
         input_dir = os.path.abspath(args.input_directory)
